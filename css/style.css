@@ -8,16 +8,40 @@ body {
 /* 레이아웃 */
 #header {
 }
-
 #nav {
   background-color: #f6fdff;
 }
 #title {
   background-color: #eaf7fd;
 }
+#contents .container {
+  border-right: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+}
+#cont_left {
+  float: left;
+  width: 250px;
+}
+#cont_center {
+  overflow: hidden;
+  min-height: 1300px;
+  border-right: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  margin-right: 250px;
+}
+#cont_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+}
+#footer {
+    border-top: 1px solid #dbdbdb;
+}
 
 /* 컨테이너 */
 .container {
+  position: relative;
   width: 1200px;
   margin: 0 auto;
 }
@@ -227,6 +251,26 @@ body {
   box-shadow: 0 0 0 3px rgba(75, 154, 191, 0.9) inset,
               0 0 0 100px rgba(0, 0, 0, 0.1) inset;
 }
+/* 컨텐츠 영역 */
+.column {
+  padding: 15px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.column.col1 {}
+.column.col2 {}
+.column.col3 {
+  border-bottom: 0;
+}
+.column.col4 {}
+.column.col5 {}
+.column.col6 {
+  border-bottom: 0;
+}
+.column.col7 {}
+.column.col8 {}
+.column.col9 {
+  border-bottom: 0;
+}
 
 /* mediaquery */
 /* 화면 너비 0 ~ 1220px */
@@ -236,6 +280,9 @@ body {
   }
   .row {
     padding: 0 15px;
+  }
+  #contents .container {
+    border: 0;
   }
   .title > .btn {
     right: 5px;
@@ -247,6 +294,15 @@ body {
 }
 /* 화면 너비 0 ~ 960px */
 @media screen and (max-width:960px) {
+  #cont_right {
+    position: static;
+    width: 100%;
+    border-top: 1px solid #dbdbdb;
+  }
+  #cont_center {
+    margin-right: 0;
+    border-right: 0;
+  }
   .nav > div {
     float: none;
     width: 100%;
@@ -266,7 +322,13 @@ body {
 }
 /* 화면 너비 0 ~ 768px */
 @media screen and (max-width:768px) {
-
+  #cont_left {
+    float: none;
+    width: 100%;
+  }
+  #cont_center {
+    border-left: 0;
+  }
 }
 /* 화면 너비 0 ~ 600px */
 @media screen and (max-width:600px) {
